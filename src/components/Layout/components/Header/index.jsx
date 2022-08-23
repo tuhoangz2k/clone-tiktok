@@ -24,6 +24,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
 import AccountItem from '~/components/AccountItem';
+import { UploadIcon } from '../Icons';
+import Image from '../Image';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -145,7 +147,7 @@ function Header() {
                                 placement="bottom"
                             >
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon className={cx('upload-icon')} />
                                 </button>
                             </Tippy>
                         </>
@@ -170,7 +172,7 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt=""
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/f743f3e37f4eb99c08a19d3cdfa95014~c5_300x300.webp?x-expires=1661313600&x-signature=zEYf5GKFm51qJ6NBSz0acsVu%2B50%3D"
