@@ -15,6 +15,7 @@ $search-btn-width: 52px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 $default-layout-header-spacer;
 
     .logo {
         display: flex;
@@ -100,4 +101,5 @@ $search-btn-width: 52px;
     margin-left: 28px;
     background-color: transparent;
     padding: 4px 8px;
+    cursor: pointer;
 }

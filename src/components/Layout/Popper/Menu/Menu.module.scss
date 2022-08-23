@@ -5,7 +5,8 @@
         width: 100%;
         border-radius: 0;
         justify-content: flex-start;
-        height: 48px;
+        line-height: 1.8rem;
+        padding: 11px 16px;
         &:hover {
             background-color: rgba(22, 24, 35, 0.03);
         }
@@ -13,4 +14,25 @@
 }
 .menu-popper {
     padding-bottom: 8px;
+}
+
+// header
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+}
+.back-btn {
+    display: block;
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
 }

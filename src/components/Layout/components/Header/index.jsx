@@ -23,6 +23,26 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    code: 'en',
+                    type: 'language',
+                    title: 'English',
+                },
+                {
+                    code: 'vi',
+                    type: 'language',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'in',
+                    type: 'language',
+                    title: 'Bahasa Indonesia',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -40,6 +60,13 @@ function Header() {
     useEffect(() => {
         setTimeout(() => {}, 3000);
     }, []);
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                break;
+            default:
+        }
+    };
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -89,7 +116,7 @@ function Header() {
                         Register
                     </Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>

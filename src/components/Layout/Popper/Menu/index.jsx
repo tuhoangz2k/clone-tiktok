@@ -1,12 +1,44 @@
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
+import { useState } from 'react';
 import { Wrapper as PopperWrapper } from '~/components/Layout/Popper';
+import Header from './Header';
 import styles from './Menu.module.scss';
 import MenuItem from './MenuItem';
+import PropTypes from 'prop-types';
+
+Menu.propTypes = {
+    onChange: PropTypes.func,
+};
 const cx = classNames.bind(styles);
-function Menu({ children, items = [] }) {
+function Menu({ children, items = [], onChange = () => {} }) {
+    const [history, setHistory] = useState([{ data: items }]);
+    const current = history[history.length - 1];
     const renderItems = () => {
-        return items.map((item, index) => <MenuItem key={index} data={item} />);
+        return current.data.map((item, index) => {
+            const isParent = !!item.children;
+            return (
+                <MenuItem
+                    key={index}
+                    data={item}
+                    onClick={() => {
+                        if (isParent) {
+                            console.log(item.children);
+                            setHistory((prev) => [...prev, item.children]);
+                        } else {
+                            onChange(item);
+                        }
+                    }}
+                />
+            );
+        });
+    };
+    const handleBackHistory = () => {
+        setHistory((prev) => {
+            const newHistory = [...prev];
+            newHistory.pop();
+            return newHistory;
+        });
     };
     return (
         <Tippy
@@ -17,6 +49,9 @@ function Menu({ children, items = [] }) {
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
+                        {history.length > 1 && (
+                            <Header title="language" onBack={handleBackHistory} />
+                        )}
                         {renderItems()}
                     </PopperWrapper>
                 </div>
