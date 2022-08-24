@@ -3,9 +3,6 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
 import { DefaultLayout } from '~/components/Layout';
 function App() {
-    let location = useLocation();
-
-    console.log(location);
     return (
         <div className="App">
             <Routes>
