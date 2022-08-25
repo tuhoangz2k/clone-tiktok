@@ -41,8 +41,9 @@ $search-btn-width: 52px;
         height: 100%;
         font-size: 1.6rem;
         background-color: transparent;
-        color: --black;
+        color: var(--black);
         caret-color: var(--primary);
+        font-family: var(--font-family);
     }
 
     input:not(:placeholder-shown) ~ .search-btn {

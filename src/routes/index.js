@@ -5,14 +5,14 @@ import Upload from '~/Pages/Upload';
 import Search from '~/Pages/Search';
 import NotFound from '~/components/NotFound';
 import { HeaderOnly } from '~/components/Layout';
-
+import routesConfig from '~/config/routes';
 const publicRoutes = [
     { path: '', component: Home },
-    { path: 'following', component: Following },
-    { path: '@:nickname', component: Profile },
-    { path: 'upload', component: Upload, layout: HeaderOnly },
-    { path: 'search', component: Search, layout: null },
-    { path: '*', component: NotFound },
+    { path: routesConfig.following, component: Following },
+    { path: routesConfig.profile, component: Profile },
+    { path: routesConfig.upload, component: Upload, layout: HeaderOnly },
+    { path: routesConfig.search, component: Search, layout: null },
+    { path: routesConfig.notFound, component: NotFound },
 ];
 
 const privateRoutes = [];

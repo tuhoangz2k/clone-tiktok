@@ -6,6 +6,8 @@ import image from '~/asset/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import routesConfig from '~/config/routes';
+
 import {
     faEllipsisVertical,
     faEarthAsia,
@@ -19,6 +21,7 @@ import {
 import { UploadIcon, MessageIcon, InboxIcon } from '../Icons';
 import Image from '../Image';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
@@ -93,9 +96,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={image.logo} alt="tiktok" />
-                </div>
+                </Link>
                 <Search />
                 <div className={cx('actions')}>
                     {currentUser ? (

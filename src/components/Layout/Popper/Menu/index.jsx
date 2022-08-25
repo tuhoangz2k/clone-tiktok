@@ -11,7 +11,7 @@ Menu.propTypes = {
     onChange: PropTypes.func,
 };
 const cx = classNames.bind(styles);
-function Menu({ children, items = [], onChange = () => {} }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = () => {} }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderItems = () => {
@@ -43,6 +43,7 @@ function Menu({ children, items = [], onChange = () => {} }) {
     return (
         <Tippy
             // visible
+            hideOnClick={hideOnClick}
             delay={[0, 700]}
             offset={[12, 8]}
             interactive={true}
