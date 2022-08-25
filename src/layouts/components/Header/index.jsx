@@ -1,4 +1,4 @@
-import { Menu } from '~/components/Layout/Popper';
+import { Menu } from '~/layouts/Popper';
 import styles from './Header.module.scss';
 import Button from '~/components/Button';
 import classNames from 'classnames/bind';
@@ -6,7 +6,7 @@ import image from '~/asset/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 import {
     faEllipsisVertical,
@@ -96,7 +96,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo')}>
+                <Link to={config.routes.home} className={cx('logo')}>
                     <img src={image.logo} alt="tiktok" />
                 </Link>
                 <Search />

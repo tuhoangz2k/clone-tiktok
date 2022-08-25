@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
-import { DefaultLayout } from '~/components/Layout';
+import DefaultLayout from '~/layouts';
 function App() {
     return (
         <div className="App">

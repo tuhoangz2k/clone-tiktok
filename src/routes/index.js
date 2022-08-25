@@ -4,15 +4,15 @@ import Profile from '~/Pages/Profile';
 import Upload from '~/Pages/Upload';
 import Search from '~/Pages/Search';
 import NotFound from '~/components/NotFound';
-import { HeaderOnly } from '~/components/Layout';
-import routesConfig from '~/config/routes';
+import { HeaderOnly } from '~/layouts';
+import config from '~/config';
 const publicRoutes = [
     { path: '', component: Home },
-    { path: routesConfig.following, component: Following },
-    { path: routesConfig.profile, component: Profile },
-    { path: routesConfig.upload, component: Upload, layout: HeaderOnly },
-    { path: routesConfig.search, component: Search, layout: null },
-    { path: routesConfig.notFound, component: NotFound },
+    { path: config.routes.following, component: Following },
+    { path: config.routes.profile, component: Profile },
+    { path: config.routes.upload, component: Upload, layout: HeaderOnly },
+    { path: config.routes.search, component: Search, layout: null },
+    { path: config.routes.notFound, component: NotFound },
 ];
 
 const privateRoutes = [];

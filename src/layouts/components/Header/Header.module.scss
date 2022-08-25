@@ -1,4 +1,3 @@
-@import '../../../GlobalStyles/variables.scss';
 $search-border-radius: 92px;
 $search-height: 46px;
 $search-btn-width: 52px;
@@ -16,11 +15,11 @@ $search-btn-width: 52px;
 }
 .inner {
     height: 100%;
-    width: $default-layout-header-width;
+    width: var(--default-layout-header-width);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 $default-layout-header-spacer;
+    padding: 0 var(--default-layout-header-spacer);
 
     .logo {
         display: flex;
