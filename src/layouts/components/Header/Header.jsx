@@ -130,6 +130,7 @@ function Header() {
                             >
                                 <button className={cx('action-btn')}>
                                     <InboxIcon className={cx('inbox-icon')} />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>

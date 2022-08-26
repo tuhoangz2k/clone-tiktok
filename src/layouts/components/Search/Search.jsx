@@ -14,25 +14,25 @@ const cx = classNames.bind(styles);
 function Search(props) {
     const [searchvalue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true);
+    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
-    const debounce = useDebounce(searchvalue, 500);
+    const debounceValue = useDebounce(searchvalue, 500);
     const inputRef = useRef();
     useEffect(() => {
-        if (!debounce.trim()) {
+        if (!debounceValue.trim()) {
             setSearchResult([]);
             return;
         }
         async function fetchApi() {
             setLoading(true);
-            const result = await searchService.search(debounce);
+            const result = await searchService.search(debounceValue);
             setSearchResult(result);
 
             console.log(result);
             setLoading(false);
         }
         fetchApi();
-    }, [debounce]);
+    }, [debounceValue]);
     const handleClearBtn = () => {
         setSearchValue('');
         setSearchResult([]);

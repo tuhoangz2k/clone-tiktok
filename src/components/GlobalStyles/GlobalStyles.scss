@@ -72,7 +72,7 @@ input,
     @extend %reset-default-button-input;
 }
 
-a[href] {
+a {
     color: $text-color;
     text-decoration: none;
 }
