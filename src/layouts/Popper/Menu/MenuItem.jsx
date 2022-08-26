@@ -6,6 +6,7 @@ const cx = classNames.bind(styles);
 
 MenuItem.propTypes = {
     data: PropTypes.object,
+    onClick: PropTypes.func,
 };
 
 function MenuItem({ data = {}, onClick }) {

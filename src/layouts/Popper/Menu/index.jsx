@@ -9,6 +9,9 @@ import PropTypes from 'prop-types';
 
 Menu.propTypes = {
     onChange: PropTypes.func,
+    children: PropTypes.node.isRequired,
+    items: PropTypes.array,
+    hideOnClick: PropTypes.bool,
 };
 const cx = classNames.bind(styles);
 function Menu({ children, items = [], hideOnClick = false, onChange = () => {} }) {
@@ -52,7 +55,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = () => {} }
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
                         {history.length > 1 && (
-                            <Header title="language" onBack={handleBackHistory} />
+                            <Header title={current.title} onBack={handleBackHistory} />
                         )}
                         <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
